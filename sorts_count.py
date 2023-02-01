@@ -37,7 +37,3 @@ def insertion_count(num_list):
                 break
 
     return comparisons, exchanges
-
-
-print(bubble_count(list(range(10, 0, -1))))
-print(insertion_count(list(range(10, 0, -1))))
