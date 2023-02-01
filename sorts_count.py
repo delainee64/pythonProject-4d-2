@@ -10,10 +10,12 @@ def bubble_count(num_list):
     comparisons = 0
     exchanges = 0
     for index in range(len(num_list)):
-        for pass_num in range(len(num_list) - index - 1):
+        for pass_num in range(index + 1, len(num_list)):
             comparisons += 1
-            if num_list[index] > num_list[pass_num + 1]:
-                num_list[index], num_list[pass_num + 1] = num_list[pass_num + 1], num_list[index]
+            if num_list[index] > num_list[pass_num]:
+                temp = num_list[index]
+                num_list[index] = num_list[pass_num]
+                num_list[pass_num] = temp
                 exchanges += 1
     return comparisons, exchanges
 
@@ -35,3 +37,7 @@ def insertion_count(num_list):
                 break
 
     return comparisons, exchanges
+
+
+print(bubble_count(list(range(10, 0, -1))))
+print(insertion_count(list(range(10, 0, -1))))
